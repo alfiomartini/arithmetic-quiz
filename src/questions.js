@@ -15,6 +15,7 @@ let STATE = {
 
 function setState(payload) {
   STATE = { ...STATE, ...payload };
+  setScore();
 }
 
 function setScore() {
@@ -29,7 +30,7 @@ function start() {
 
   for (let j = 0; j < STATE.num_questions; j++) {
     const question = getQuestion();
-    const btnsClass = `.q0${j + 1} > button`;
+    const btnsClass = `.q0${j + 1}  button`;
     const expClass = `.q0${j + 1} > .expression`;
     const expElem = questions.querySelector(expClass);
     expElem.innerText = question.exp;
@@ -52,8 +53,7 @@ function processQuestion(event) {
   const mark = question.querySelector(".is-correct");
 
   if (button.dataset.answer === "true") {
-    setState({ scoreVal: STATE.scoreVal++ });
-    setScore();
+    setState({ scoreVal: ++STATE.scoreVal });
     mark.innerHTML = "&#10003"; // check mark
   } else {
     mark.innerHTML = "&#9932";
