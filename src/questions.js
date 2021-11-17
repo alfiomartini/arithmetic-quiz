@@ -7,19 +7,22 @@ reload.addEventListener("click", start);
 const scoreElm = document.querySelector(".score-value");
 const NUM_QUESTIONS = 5;
 
-const STATE = {
+let STATE = {
   num_questions: NUM_QUESTIONS,
   scoreVal: 0,
   answered: new Array(NUM_QUESTIONS).fill(false),
 };
+
+function setState(payload) {
+  STATE = { ...STATE, ...payload };
+}
 
 function setScore() {
   scoreElm.innerText = `score: ${STATE.scoreVal}`;
 }
 
 function start() {
-  STATE.scoreVal = 0;
-  setScore();
+  setState({ scoreVal: 0 });
   document.querySelectorAll(".is-correct").forEach((box) => {
     box.innerText = "";
   });
@@ -49,7 +52,7 @@ function processQuestion(event) {
   const mark = question.querySelector(".is-correct");
 
   if (button.dataset.answer === "true") {
-    STATE.scoreVal++;
+    setState({ scoreVal: STATE.scoreVal++ });
     setScore();
     mark.innerHTML = "&#10003"; // check mark
   } else {
