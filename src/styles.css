@@ -11,10 +11,12 @@ body {
 .container {
   display: flex;
   flex-direction: column;
-  width: 550px;
+  width: 50%;
   margin: 50px auto;
   border: 1px solid black;
+  background-color: #000033;
   padding: 10px;
+  color: lightsteelblue;
 }
 
 .header {
@@ -22,7 +24,8 @@ body {
   font-size: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin: 5px 10px;
 }
 
 .questions {
@@ -35,6 +38,8 @@ body {
   border: 1px solid black;
   width: 100px;
   text-align: center;
+  border: 1px solid lightsteelblue;
+  color: whitesmoke;
 }
 
 .question {
@@ -51,12 +56,16 @@ button {
   color: whitesmoke;
 }
 
+button.reload {
+  width: 100px;
+}
+
 button:hover {
   background-color: navy;
 }
 
 .is-correct {
   width: 40px;
-  border: 1px solid black;
+  border: 1px solid lightsteelblue;
   text-align: center;
 }
