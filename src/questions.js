@@ -20,6 +20,10 @@ function setScore() {
 function start() {
   STATE.scoreVal = 0;
   setScore();
+  document.querySelectorAll(".is-correct").forEach((box) => {
+    box.innerText = "";
+  });
+
   for (let j = 0; j < STATE.num_questions; j++) {
     const question = getQuestion();
     const btnsClass = `.q0${j + 1} > button`;

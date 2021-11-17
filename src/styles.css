@@ -6,12 +6,13 @@
 
 body {
   padding: 30px;
+  background-color: wheat;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 60%;
   margin: 50px auto;
   border: 1px solid black;
   background-color: #000033;
@@ -68,4 +69,23 @@ button:hover {
   width: 40px;
   border: 1px solid lightsteelblue;
   text-align: center;
+}
+
+/* media queries */
+@media only screen and (max-width: 1000px) {
+  .container {
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .container {
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    width: 90%;
+  }
 }
