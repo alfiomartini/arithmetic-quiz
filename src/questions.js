@@ -49,7 +49,7 @@ function start() {
 
 function processQuestion(event) {
   const button = event.target;
-  const question = button.parentElement;
+  const question = button.parentElement.parentElement;
   const mark = question.querySelector(".is-correct");
 
   if (button.dataset.answer === "true") {
